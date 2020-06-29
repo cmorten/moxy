@@ -4,4 +4,4 @@
  * 
  * @param {Function} fn  
  */
-export const moxy = async (fn: Function) => await import(fn(import.meta));
+export const moxy = async (fn: Function) => await import(fn());
