@@ -14,9 +14,9 @@ const getModuleUrl = () => {
 };
 
 const createMockModule = (nodule: any) => {
-  console.log(nodule);
+  console.log(Object.keys(nodule));
 
   return nodule;
 };
 
-export const mock = moxy(getModuleUrl, createMockModule);
+moxy(getModuleUrl, createMockModule);
