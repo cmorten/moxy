@@ -7,9 +7,9 @@ export const random = moxy(({ url }: { url: string }) => {
   const tails = params.get("tails");
 
   if (!heads) {
-    throw new Error("missing head querystring param");
+    throw new Error("missing heads querystring param");
   } else if (!tails) {
-    throw new Error("missing head querystring param");
+    throw new Error("missing tails querystring param");
   }
 
   const toss = Math.random() > 0.5 ? heads : tails;
