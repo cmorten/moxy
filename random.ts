@@ -4,10 +4,6 @@ import { moxy } from "./moxy.ts";
 
 export const random = moxy(() => {
   const params = new URL(url).searchParams;
-
-  console.log(url);
-  console.log(Object.fromEntries(params.entries()));
-
   const heads = params.get("heads");
   const tails = params.get("tails");
 
