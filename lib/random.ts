@@ -1,6 +1,6 @@
-import { moxy } from "./moxy.ts";
-
 const { url } = import.meta;
+
+import { moxy } from "./moxy.ts";
 
 export const random = moxy(() => {
   const params = new URL(url).searchParams;
