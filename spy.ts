@@ -20,4 +20,4 @@ const createMockModule = (nodule: any) =>
     [prop]: typeof value === "function" ? spy(value) : value,
   }), {});
 
-moxy(getModuleUrl, createMockModule);
+export default moxy(getModuleUrl, createMockModule);
