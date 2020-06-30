@@ -1,7 +1,7 @@
 const { url } = import.meta;
 
 import { moxy } from "./moxy.ts";
-import { spy } from "https://deno.land/x/mock/spy.ts";
+import { spy } from "https://deno.land/x/mock@v0.3.0/spy.ts";
 
 const getModuleUrl = () => {
   const params = new URL(url).searchParams;
