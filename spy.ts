@@ -1,6 +1,7 @@
 const { url } = import.meta;
 
 import { moxy } from "./moxy.ts";
+import { spy } from "https://deno.land/x/mock/spy.ts";
 
 const getModuleUrl = () => {
   const params = new URL(url).searchParams;
@@ -13,10 +14,10 @@ const getModuleUrl = () => {
   return m;
 };
 
-const createMockModule = (nodule: any) => {
-  console.log(Object.keys(nodule));
-
-  return nodule;
-};
+const createMockModule = (nodule: any) =>
+  Object.entries(nodule).reduce((watchedNodule, [prop, value]) => ({
+    ...watchedNodule,
+    [prop]: typeof value === "function" ? spy(value) : value,
+  }), {});
 
 moxy(getModuleUrl, createMockModule);
